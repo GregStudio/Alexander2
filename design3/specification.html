@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT. Anugerah Metal Indonesia - Spesifikasi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-banner { position:relative; padding:80px 0; background:url('images/ami/home1.jpeg') center/cover; }
+    .page-banner::after { content:''; position:absolute; inset:0; background:rgba(13,27,42,0.8); }
+    .page-banner .container { position:relative; z-index:1; }
+    .page-banner h1 { font-family:'Oswald',sans-serif; font-size:48px; color:#fff; text-transform:uppercase; }
+    .page-banner .breadcrumb { color:rgba(255,255,255,0.6); font-size:13px; margin-top:8px; }
+    .page-banner .breadcrumb a { color:var(--orange); }
+    .spec-section { padding:80px 0; background:var(--light-bg); }
+    .spec-block { background:#fff; padding:30px; margin-bottom:30px; }
+    .spec-block img { max-width:100%; margin:0 auto; }
+    .spec-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .spec-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+    .cert-block { display:flex; gap:20px; justify-content:center; align-items:center; background:#fff; padding:30px; }
+    @media(max-width:768px){ .spec-grid-3,.spec-grid-2{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>📧 amibronjong02@gmail.com</span><span>📞 +62 878-6671-9772</span></div></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="index.html"><img src="images/ami/logonavbar.png" alt="Logo"></a></div>
+      <nav class="main-nav">
+        <button class="nav-toggle" id="navToggle">☰</button>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li class="has-dropdown"><a href="#">Produk ▾</a><ul class="dropdown"><li><a href="product.html">Product Overview</a></li><li><a href="specification.html">Spesifikasi</a></li></ul></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="page-banner"><div class="container"><h1>Product Specification</h1><p class="breadcrumb"><a href="index.html">Home</a> / Spesifikasi</p></div></div>
+  <section class="spec-section">
+    <div class="container">
+      <div class="spec-block"><img src="images/ami/specification1.png" alt="Spesifikasi 1"></div>
+      <div class="spec-grid-3">
+        <div class="spec-block"><img src="images/ami/specification2.png" alt="Spesifikasi 2"></div>
+        <div class="spec-block"><img src="images/ami/specification3.png" alt="Spesifikasi 3"></div>
+        <div class="spec-block"><img src="images/ami/specification4.png" alt="Spesifikasi 4"></div>
+      </div>
+      <div class="spec-grid-2" style="margin-top:20px">
+        <div class="spec-block"><img src="images/ami/specification5.png" alt="Spesifikasi 5"></div>
+        <div class="spec-block"><img src="images/ami/specification6.png" alt="Spesifikasi 6"></div>
+      </div>
+      <div class="cert-block" style="margin-top:20px">
+        <img src="images/ami/logokemenperin.png" alt="Kemenperin" height="50">
+        <img src="images/ami/logokan.png" alt="KAN" height="50">
+        <img src="images/ami/logosni1.png" alt="SNI" height="50">
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-top" style="background-image:url('images/ami/home3.jpeg')"><div class="footer-overlay"></div>
+      <div class="container footer-grid">
+        <div class="footer-col"><h4>Kontak</h4><p>📞 +62 878-6671-9772<br>📧 amibronjong02@gmail.com</p></div>
+        <div class="footer-col"><h4>Sertifikasi</h4><div class="cert-logos"><img src="images/ami/logokemenperin.png" alt="Kemenperin" height="40"><img src="images/ami/logokan.png" alt="KAN" height="40"><img src="images/ami/logosni1.png" alt="SNI" height="40"></div></div>
+        <div class="footer-col"><h4>Lokasi</h4><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.1342822785077!2d112.679349175289!3d-7.225520792780457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ff1c8f97db49%3A0x199da6ad8df41882!2sJl.%20Greges%20Jaya%20III%20No.14%2C%20Greges%2C%20Kec.%20Asem%20Rowo%2C%20Surabaya%2C%20Jawa%20Timur%2060183!5e0!3m2!1sen!2sid!4v1707631855228!5m2!1sen!2sid" width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2024 PT. Anugerah Metal Indonesia. All Rights Reserved.</p></div></div>
+  </footer>
+  <script>document.getElementById('navToggle').addEventListener('click',function(){document.getElementById('navMenu').classList.toggle('open');});</script>
+</body>
+</html>

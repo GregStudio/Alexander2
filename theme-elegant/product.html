@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT. Anugerah Metal Indonesia - Produk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero { position:relative; padding:100px 0; background:url('images/ami/home1.jpeg') center/cover; text-align:center; }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(44,24,16,0.75); }
+    .page-hero .container { position:relative; z-index:1; }
+    .page-hero h1 { font-family:'Playfair Display',serif; font-size:52px; color:#fff; font-weight:400; margin-bottom:12px; }
+    .page-hero p { color:rgba(255,255,255,0.7); font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+    .page-hero p a { color:var(--gold); }
+    .products-page { padding:100px 0; background:var(--cream); }
+    .products-list { display:grid; grid-template-columns:repeat(2,1fr); gap:40px; }
+    .prod-item { display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--white); overflow:hidden; }
+    .prod-item:nth-child(even) { direction:rtl; }
+    .prod-item:nth-child(even) .prod-text { direction:ltr; }
+    .prod-img { overflow:hidden; }
+    .prod-img img { width:100%; height:100%; object-fit:cover; min-height:250px; transition:transform 0.6s; }
+    .prod-item:hover .prod-img img { transform:scale(1.05); }
+    .prod-text { padding:36px 32px; display:flex; flex-direction:column; justify-content:center; }
+    .prod-text h3 { font-family:'Playfair Display',serif; font-size:22px; color:var(--text); margin-bottom:12px; font-weight:400; }
+    .prod-text p { font-size:14px; color:var(--gray); line-height:1.8; }
+    .prod-num { font-size:48px; font-weight:700; color:var(--gold-light); line-height:1; margin-bottom:8px; font-family:'Playfair Display',serif; }
+    @media(max-width:900px){ .products-list{grid-template-columns:1fr;} .prod-item,.prod-item:nth-child(even){direction:ltr; grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-contact-bar"><div class="container"><span>amibronjong02@gmail.com</span><span class="divider">|</span><span>+62 878-6671-9772</span></div></div>
+    <div class="header-main"><div class="container header-inner">
+      <nav class="nav-left"><a href="index.html">Beranda</a><a href="gallery.html">Galeri</a></nav>
+      <a href="index.html" class="logo-center"><img src="images/ami/logonavbar.png" alt="AMI Logo"></a>
+      <nav class="nav-right"><a href="product.html">Produk</a><a href="contact.html" class="nav-cta">Kontak</a></nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div></div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Beranda</a><a href="product.html">Product Overview</a>
+      <a href="specification.html">Spesifikasi</a><a href="gallery.html">Galeri</a><a href="contact.html">Kontak</a>
+    </div>
+  </header>
+  <div class="page-hero"><div class="container"><h1>Koleksi Produk</h1><p><a href="index.html">Beranda</a> / Produk</p></div></div>
+  <section class="products-page">
+    <div class="container">
+      <div class="products-list">
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product6.png" alt="Bronjong Galvanis"></div><div class="prod-text"><div class="prod-num">01</div><h3>Kawat Bronjong Pabrikasi Manual (Galvanis)</h3><p>Struktur berbentuk kotak dari anyaman kawat baja galvanis berkualitas tinggi, diproduksi secara manual dengan standar SNI.</p></div></div>
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product7.png" alt="Bronjong Mesin"></div><div class="prod-text"><div class="prod-num">02</div><h3>Kawat Bronjong Pabrikasi Mesin (Galvanis)</h3><p>Struktur kotak dari anyaman kawat baja galvanis, diproduksi dengan mesin untuk konsistensi dan kualitas tinggi.</p></div></div>
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product5.png" alt="Bronjong PVC"></div><div class="prod-text"><div class="prod-num">03</div><h3>Kawat Bronjong Lapis PVC</h3><p>Anyaman kawat baja galvanis dilapisi Polyvinyl Chloride (PVC), memberikan ketahanan korosi ekstra untuk lingkungan agresif.</p></div></div>
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product1.png" alt="Kawat Galvanis"></div><div class="prod-text"><div class="prod-num">04</div><h3>Kawat Galvanis BWG</h3><p>Kawat baja galvanis berkualitas tinggi yang dikepang untuk membentuk struktur kisi yang kuat dan tahan lama.</p></div></div>
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product2.png" alt="Kawat Duri"></div><div class="prod-text"><div class="prod-num">05</div><h3>Kawat Duri (Barbed Wire)</h3><p>Kawat dengan duri tajam pada interval tetap, dirancang untuk keamanan dan pembatas area.</p></div></div>
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product3.png" alt="Geomembran"></div><div class="prod-text"><div class="prod-num">06</div><h3>Geomembran (Geomembrane)</h3><p>Lembaran material sintetis permeabilitas rendah sebagai penghalang cairan dan gas dalam konstruksi.</p></div></div>
+        <div class="prod-item"><div class="prod-img"><img src="images/ami/product4.png" alt="Geotekstil"></div><div class="prod-text"><div class="prod-num">07</div><h3>Geotekstil (Geotextile)</h3><p>Bahan tekstil permeabel untuk aplikasi teknik sipil: memisahkan, menyaring, memperkuat, dan melindungi tanah.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-hero" style="background-image:url('images/ami/home3.jpeg')"><div class="footer-overlay"></div>
+      <div class="container footer-inner">
+        <div class="footer-brand"><img src="images/ami/logonavbar.png" alt="AMI" height="55"><p>Manufacturer kawat bronjong/gabion terpercaya di Indonesia</p></div>
+        <div class="footer-contacts"><h4>Hubungi Kami</h4><p>📞 +62 878-6671-9772</p><p>📧 amibronjong02@gmail.com</p></div>
+        <div class="footer-map"><h4>Lokasi Pabrik</h4><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.1342822785077!2d112.679349175289!3d-7.225520792780457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ff1c8f97db49%3A0x199da6ad8df41882!2sJl.%20Greges%20Jaya%20III%20No.14%2C%20Greges%2C%20Kec.%20Asem%20Rowo%2C%20Surabaya%2C%20Jawa%20Timur%2060183!5e0!3m2!1sen!2sid!4v1707631855228!5m2!1sen!2sid" width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2024 PT. Anugerah Metal Indonesia. All Rights Reserved.</p></div></div>
+  </footer>
+  <script>document.getElementById('mobileMenuBtn').addEventListener('click',function(){document.getElementById('mobileNav').classList.toggle('open');});</script>
+</body>
+</html>

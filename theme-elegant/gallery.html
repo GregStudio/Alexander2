@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PT. Anugerah Metal Indonesia - Galeri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero { position:relative; padding:100px 0; background:url('images/ami/home1.jpeg') center/cover; text-align:center; }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(44,24,16,0.75); }
+    .page-hero .container { position:relative; z-index:1; }
+    .page-hero h1 { font-family:'Playfair Display',serif; font-size:52px; color:#fff; font-weight:400; margin-bottom:12px; }
+    .page-hero p { color:rgba(255,255,255,0.7); font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+    .page-hero p a { color:var(--gold); }
+    .gallery-page { padding:100px 0; background:var(--cream); }
+    .experience-block { margin-bottom:70px; }
+    .experience-block h3 { font-family:'Playfair Display',serif; font-size:26px; color:var(--text); font-weight:400; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid var(--border); }
+    .exp-list { display:grid; grid-template-columns:1fr 1fr; gap:0; list-style:none; }
+    .exp-list li { font-size:14px; color:var(--gray); padding:10px 0; border-bottom:1px solid var(--border); line-height:1.6; }
+    .gallery-masonry { columns:4; gap:8px; }
+    .gallery-masonry .gal-item { break-inside:avoid; margin-bottom:8px; overflow:hidden; }
+    .gallery-masonry .gal-item img { width:100%; display:block; transition:transform 0.5s; cursor:pointer; }
+    .gallery-masonry .gal-item:hover img { transform:scale(1.04); }
+    @media(max-width:900px){ .gallery-masonry{columns:3;} .exp-list{grid-template-columns:1fr;} }
+    @media(max-width:600px){ .gallery-masonry{columns:2;} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-contact-bar"><div class="container"><span>amibronjong02@gmail.com</span><span class="divider">|</span><span>+62 878-6671-9772</span></div></div>
+    <div class="header-main"><div class="container header-inner">
+      <nav class="nav-left"><a href="index.html">Beranda</a><a href="gallery.html">Galeri</a></nav>
+      <a href="index.html" class="logo-center"><img src="images/ami/logonavbar.png" alt="AMI Logo"></a>
+      <nav class="nav-right"><a href="product.html">Produk</a><a href="contact.html" class="nav-cta">Kontak</a></nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div></div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Beranda</a><a href="product.html">Product Overview</a>
+      <a href="specification.html">Spesifikasi</a><a href="gallery.html">Galeri</a><a href="contact.html">Kontak</a>
+    </div>
+  </header>
+  <div class="page-hero"><div class="container"><h1>Galeri & Pengalaman</h1><p><a href="index.html">Beranda</a> / Galeri</p></div></div>
+  <section class="gallery-page">
+    <div class="container">
+      <div class="experience-block">
+        <h3>Perusahaan Multi Nasional</h3>
+        <ul class="exp-list">
+          <li>PT. MULTIKON, Jakarta — Gudang & Lapangan Golf PT. Gudang Garam, Pandaan Jatim</li>
+          <li>PT. KPSI — Kalimantan Selatan, Pengerjaan Sungai di Panajam</li>
+          <li>PT. Titan Konstruksi — Denpasar Bali, Perkuatan Tebing Sungai</li>
+          <li>PT. CONBLOC, Jakarta — Proyek di Kalimantan</li>
+          <li>PT. PANCAWIRAWA KARYATAMA — Bedugul Pasar Agro, Bali</li>
+          <li>PT. CHEIL JEDANG — Kawat Harmonika di Pasuruan</li>
+        </ul>
+        <br>
+        <h3>Kontraktor Daerah Seluruh Indonesia</h3>
+        <ul class="exp-list">
+          <li>Lhokseumawe - NAD</li><li>Sorong - Irian Barat</li><li>Jayapura - Papua</li><li>Waingapu - NTT</li>
+          <li>Balikpapan - Kaltim</li><li>Tarakan - Kaltim</li><li>Samarinda - Kaltim</li><li>Banjarmasin - Kalsel</li>
+          <li>Surabaya - Jatim</li><li>Pacitan - Jatim</li><li>Banyuwangi - Jatim</li><li>Manado - Sulut</li>
+          <li>Makassar - Sulsel</li><li>Pontianak - Kalbar</li><li>Yogyakarta</li><li>Palembang - Sumsel</li>
+          <li>Mataram - NTB</li><li>Bedugul - Bali</li><li>Labuan Bajo - NTT</li><li>Dan masih banyak lagi...</li>
+        </ul>
+      </div>
+      <div class="gallery-masonry">
+        <div class="gal-item"><img src="images/ami/gallery1.jpg" alt="Gallery 1"></div>
+        <div class="gal-item"><img src="images/ami/gallery2.jpg" alt="Gallery 2"></div>
+        <div class="gal-item"><img src="images/ami/gallery3.jpg" alt="Gallery 3"></div>
+        <div class="gal-item"><img src="images/ami/gallery4.jpeg" alt="Gallery 4"></div>
+        <div class="gal-item"><img src="images/ami/gallery5.jpeg" alt="Gallery 5"></div>
+        <div class="gal-item"><img src="images/ami/gallery6.jpeg" alt="Gallery 6"></div>
+        <div class="gal-item"><img src="images/ami/gallery7.jpeg" alt="Gallery 7"></div>
+        <div class="gal-item"><img src="images/ami/gallery8.jpeg" alt="Gallery 8"></div>
+        <div class="gal-item"><img src="images/ami/gallery9.jpeg" alt="Gallery 9"></div>
+        <div class="gal-item"><img src="images/ami/gallery10.jpeg" alt="Gallery 10"></div>
+        <div class="gal-item"><img src="images/ami/gallery11.jpeg" alt="Gallery 11"></div>
+        <div class="gal-item"><img src="images/ami/gallery12.jpeg" alt="Gallery 12"></div>
+        <div class="gal-item"><img src="images/ami/gallery13.jpeg" alt="Gallery 13"></div>
+        <div class="gal-item"><img src="images/ami/gallery14.jpg" alt="Gallery 14"></div>
+        <div class="gal-item"><img src="images/ami/gallery15.jpg" alt="Gallery 15"></div>
+        <div class="gal-item"><img src="images/ami/gallery16.jpeg" alt="Gallery 16"></div>
+        <div class="gal-item"><img src="images/ami/gallery17.jpg" alt="Gallery 17"></div>
+        <div class="gal-item"><img src="images/ami/gallery18.jpeg" alt="Gallery 18"></div>
+        <div class="gal-item"><img src="images/ami/gallery19.jpeg" alt="Gallery 19"></div>
+        <div class="gal-item"><img src="images/ami/gallery20.jpg" alt="Gallery 20"></div>
+        <div class="gal-item"><img src="images/ami/gallery21.jpg" alt="Gallery 21"></div>
+        <div class="gal-item"><img src="images/ami/gallery22.jpeg" alt="Gallery 22"></div>
+        <div class="gal-item"><img src="images/ami/gallery23.jpg" alt="Gallery 23"></div>
+        <div class="gal-item"><img src="images/ami/gallery24.jpg" alt="Gallery 24"></div>
+        <div class="gal-item"><img src="images/ami/gallery25.jpg" alt="Gallery 25"></div>
+        <div class="gal-item"><img src="images/ami/gallery26.jpg" alt="Gallery 26"></div>
+        <div class="gal-item"><img src="images/ami/gallery27.jpeg" alt="Gallery 27"></div>
+        <div class="gal-item"><img src="images/ami/gallery28.jpeg" alt="Gallery 28"></div>
+        <div class="gal-item"><img src="images/ami/gallery29.jpg" alt="Gallery 29"></div>
+        <div class="gal-item"><img src="images/ami/gallery30.jpg" alt="Gallery 30"></div>
+        <div class="gal-item"><img src="images/ami/gallery31.jpeg" alt="Gallery 31"></div>
+        <div class="gal-item"><img src="images/ami/gallery32.jpeg" alt="Gallery 32"></div>
+        <div class="gal-item"><img src="images/ami/gallery33.jpeg" alt="Gallery 33"></div>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-hero" style="background-image:url('images/ami/home3.jpeg')"><div class="footer-overlay"></div>
+      <div class="container footer-inner">
+        <div class="footer-brand"><img src="images/ami/logonavbar.png" alt="AMI" height="55"><p>Manufacturer kawat bronjong/gabion terpercaya di Indonesia</p></div>
+        <div class="footer-contacts"><h4>Hubungi Kami</h4><p>📞 +62 878-6671-9772</p><p>📧 amibronjong02@gmail.com</p></div>
+        <div class="footer-map"><h4>Lokasi Pabrik</h4><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.1342822785077!2d112.679349175289!3d-7.225520792780457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ff1c8f97db49%3A0x199da6ad8df41882!2sJl.%20Greges%20Jaya%20III%20No.14%2C%20Greges%2C%20Kec.%20Asem%20Rowo%2C%20Surabaya%2C%20Jawa%20Timur%2060183!5e0!3m2!1sen!2sid!4v1707631855228!5m2!1sen!2sid" width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2024 PT. Anugerah Metal Indonesia. All Rights Reserved.</p></div></div>
+  </footer>
+  <script>document.getElementById('mobileMenuBtn').addEventListener('click',function(){document.getElementById('mobileNav').classList.toggle('open');});</script>
+</body>
+</html>
