@@ -7,40 +7,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-hero { background:var(--blue); padding:80px 0; }
-    .page-hero h1 { font-size:40px; font-weight:700; color:#fff; margin-bottom:8px; }
-    .page-hero .breadcrumb { color:rgba(255,255,255,0.7); font-size:13px; }
-    .page-hero .breadcrumb a { color:rgba(255,255,255,0.9); }
-    .gallery-page { padding:80px 0; }
-    .experience-section { background:var(--blue-light); border-radius:12px; padding:40px; margin-bottom:60px; border:1px solid var(--border); }
-    .experience-section h3 { font-size:16px; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px; }
-    .exp-list { display:grid; grid-template-columns:1fr 1fr; gap:8px; list-style:none; }
-    .exp-list li { font-size:13px; color:var(--text); padding:6px 0; border-bottom:1px solid var(--border); }
-    .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
-    .gallery-item { overflow:hidden; border-radius:8px; aspect-ratio:4/3; }
-    .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; cursor:pointer; }
-    .gallery-item:hover img { transform:scale(1.06); }
-    @media(max-width:768px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} .exp-list{grid-template-columns:1fr;} }
+    .page-hero { background: var(--blue); padding: 80px 0; }
+    .page-hero h1 { font-size: 40px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .page-hero .breadcrumb { color: rgba(255,255,255,0.7); font-size: 13px; }
+    .page-hero .breadcrumb a { color: rgba(255,255,255,0.9); }
+    .gallery-page { padding: 80px 0; }
+    .experience-section { background: var(--blue-light); border-radius: 12px; padding: 40px; margin-bottom: 60px; border: 1px solid var(--border); }
+    .experience-section h3 { font-size: 16px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .exp-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; list-style: none; }
+    .exp-list li { font-size: 13px; color: var(--text); padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .gallery-item { overflow: hidden; border-radius: 8px; aspect-ratio: 4/3; background: var(--gray-light); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; cursor: pointer; }
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 9999; align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox-img { max-width: 90vw; max-height: 88vh; border-radius: 8px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 20px; right: 28px; font-size: 36px; color: #fff; cursor: pointer; line-height: 1; background: none; border: none; }
+    .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); font-size: 40px; color: #fff; cursor: pointer; background: none; border: none; padding: 0 16px; opacity: 0.7; transition: opacity 0.2s; }
+    .lightbox-prev:hover, .lightbox-next:hover { opacity: 1; }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .exp-list { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <header class="site-header" id="siteHeader">
-    <div class="header-top-bar"><div class="container"><span>📧 amibronjong02@gmail.com</span><span>📞 +62 878-6671-9772</span></div></div>
-    <div class="header-main"><div class="container header-inner">
-      <a href="index.html" class="logo"><img src="images/ami/logonavbar.png" alt="AMI Logo"></a>
-      <nav class="main-nav">
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-        <ul class="nav-list" id="navList">
-          <li><a href="index.html">Beranda</a></li>
-          <li class="dropdown-parent"><a href="#">Produk</a><ul class="dropdown"><li><a href="product.html">Product Overview</a></li><li><a href="specification.html">Spesifikasi Produk</a></li></ul></li>
-          <li><a href="gallery.html" class="active">Galeri</a></li>
-          <li><a href="contact.html">Kontak</a></li>
-          <li><a href="contact.html" class="nav-cta">Hubungi Kami</a></li>
-        </ul>
-      </nav>
-    </div></div>
+    <div class="header-top-bar">
+      <div class="container">
+        <span>📧 amibronjong02@gmail.com</span>
+        <span>📞 +62 878-6671-9772</span>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container header-inner">
+        <a href="index.html" class="logo"><img src="Picture/Logo/logonavbar.png" alt="AMI Logo"></a>
+        <nav class="main-nav">
+          <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+          <ul class="nav-list" id="navList">
+            <li><a href="index.html">Beranda</a></li>
+            <li class="dropdown-parent">
+              <a href="#">Produk</a>
+              <ul class="dropdown">
+                <li><a href="product.html">Product Overview</a></li>
+                <li><a href="specification.html">Spesifikasi Produk</a></li>
+              </ul>
+            </li>
+            <li><a href="gallery.html" class="active">Galeri</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+            <li><a href="contact.html" class="nav-cta">Hubungi Kami</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
-  <div class="page-hero"><div class="container"><h1>Galeri & Pengalaman Kerja</h1><p class="breadcrumb"><a href="index.html">Beranda</a> / Galeri</p></div></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Galeri & Pengalaman Kerja</h1>
+      <p class="breadcrumb"><a href="index.html">Beranda</a> / Galeri</p>
+    </div>
+  </div>
+
   <section class="gallery-page">
     <div class="container">
       <div class="experience-section">
@@ -56,60 +90,163 @@
         <br>
         <h3>Kontraktor Daerah Seluruh Indonesia</h3>
         <ul class="exp-list">
-          <li>Lhokseumawe - NAD</li><li>Sorong - Irian Barat</li><li>Jayapura - Papua</li><li>Waingapu - NTT</li>
-          <li>Balikpapan - Kaltim</li><li>Tarakan - Kaltim</li><li>Samarinda - Kaltim</li><li>Banjarmasin - Kalsel</li>
-          <li>Surabaya - Jatim</li><li>Pacitan - Jatim</li><li>Banyuwangi - Jatim</li><li>Manado - Sulut</li>
-          <li>Makassar - Sulsel</li><li>Pontianak - Kalbar</li><li>Yogyakarta</li><li>Palembang - Sumsel</li>
-          <li>Mataram - NTB</li><li>Bedugul - Bali</li><li>Labuan Bajo - NTT</li><li>Dan masih banyak lagi...</li>
+          <li>Lhokseumawe - NAD</li>
+          <li>Sorong - Irian Barat</li>
+          <li>Jayapura - Papua</li>
+          <li>Waingapu - NTT</li>
+          <li>Balikpapan - Kaltim</li>
+          <li>Tarakan - Kaltim</li>
+          <li>Samarinda - Kaltim</li>
+          <li>Banjarmasin - Kalsel</li>
+          <li>Surabaya - Jatim</li>
+          <li>Pacitan - Jatim</li>
+          <li>Banyuwangi - Jatim</li>
+          <li>Manado - Sulut</li>
+          <li>Makassar - Sulsel</li>
+          <li>Pontianak - Kalbar</li>
+          <li>Yogyakarta</li>
+          <li>Palembang - Sumsel</li>
+          <li>Mataram - NTB</li>
+          <li>Bedugul - Bali</li>
+          <li>Labuan Bajo - NTT</li>
+          <li>Dan masih banyak lagi...</li>
         </ul>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/ami/gallery1.jpg" alt="Gallery 1"></div>
-        <div class="gallery-item"><img src="images/ami/gallery2.jpg" alt="Gallery 2"></div>
-        <div class="gallery-item"><img src="images/ami/gallery3.jpg" alt="Gallery 3"></div>
-        <div class="gallery-item"><img src="images/ami/gallery4.jpeg" alt="Gallery 4"></div>
-        <div class="gallery-item"><img src="images/ami/gallery5.jpeg" alt="Gallery 5"></div>
-        <div class="gallery-item"><img src="images/ami/gallery6.jpeg" alt="Gallery 6"></div>
-        <div class="gallery-item"><img src="images/ami/gallery7.jpeg" alt="Gallery 7"></div>
-        <div class="gallery-item"><img src="images/ami/gallery8.jpeg" alt="Gallery 8"></div>
-        <div class="gallery-item"><img src="images/ami/gallery9.jpeg" alt="Gallery 9"></div>
-        <div class="gallery-item"><img src="images/ami/gallery10.jpeg" alt="Gallery 10"></div>
-        <div class="gallery-item"><img src="images/ami/gallery11.jpeg" alt="Gallery 11"></div>
-        <div class="gallery-item"><img src="images/ami/gallery12.jpeg" alt="Gallery 12"></div>
-        <div class="gallery-item"><img src="images/ami/gallery13.jpeg" alt="Gallery 13"></div>
-        <div class="gallery-item"><img src="images/ami/gallery14.jpg" alt="Gallery 14"></div>
-        <div class="gallery-item"><img src="images/ami/gallery15.jpg" alt="Gallery 15"></div>
-        <div class="gallery-item"><img src="images/ami/gallery16.jpeg" alt="Gallery 16"></div>
-        <div class="gallery-item"><img src="images/ami/gallery17.jpg" alt="Gallery 17"></div>
-        <div class="gallery-item"><img src="images/ami/gallery18.jpeg" alt="Gallery 18"></div>
-        <div class="gallery-item"><img src="images/ami/gallery19.jpeg" alt="Gallery 19"></div>
-        <div class="gallery-item"><img src="images/ami/gallery20.jpg" alt="Gallery 20"></div>
-        <div class="gallery-item"><img src="images/ami/gallery21.jpg" alt="Gallery 21"></div>
-        <div class="gallery-item"><img src="images/ami/gallery22.jpeg" alt="Gallery 22"></div>
-        <div class="gallery-item"><img src="images/ami/gallery23.jpg" alt="Gallery 23"></div>
-        <div class="gallery-item"><img src="images/ami/gallery24.jpg" alt="Gallery 24"></div>
-        <div class="gallery-item"><img src="images/ami/gallery25.jpg" alt="Gallery 25"></div>
-        <div class="gallery-item"><img src="images/ami/gallery26.jpg" alt="Gallery 26"></div>
-        <div class="gallery-item"><img src="images/ami/gallery27.jpeg" alt="Gallery 27"></div>
-        <div class="gallery-item"><img src="images/ami/gallery28.jpeg" alt="Gallery 28"></div>
-        <div class="gallery-item"><img src="images/ami/gallery29.jpg" alt="Gallery 29"></div>
-        <div class="gallery-item"><img src="images/ami/gallery30.jpg" alt="Gallery 30"></div>
-        <div class="gallery-item"><img src="images/ami/gallery31.jpeg" alt="Gallery 31"></div>
-        <div class="gallery-item"><img src="images/ami/gallery32.jpeg" alt="Gallery 32"></div>
-        <div class="gallery-item"><img src="images/ami/gallery33.jpeg" alt="Gallery 33"></div>
+
+      <!-- Gallery from Picture/Gallery -->
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item"><img src="Picture/Gallery/1765973972263.png" alt="Galeri AMI 1" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974059619.png" alt="Galeri AMI 2" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974068553.png" alt="Galeri AMI 3" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974169211.png" alt="Galeri AMI 4" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974235915.png" alt="Galeri AMI 5" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974249403.png" alt="Galeri AMI 6" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974314287.png" alt="Galeri AMI 7" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765974835836.png" alt="Galeri AMI 8" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765975008471.png" alt="Galeri AMI 9" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765975020671.png" alt="Galeri AMI 10" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765975035516.png" alt="Galeri AMI 11" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765975104832.png" alt="Galeri AMI 12" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/1765975306043.png" alt="Galeri AMI 13" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/20241128_130628.jpg" alt="Galeri AMI 14" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/20241128_130643.jpg" alt="Galeri AMI 15" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander.jpg" alt="Galeri AMI 16" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(1).jpg" alt="Galeri AMI 17" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(2).jpg" alt="Galeri AMI 18" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(3).jpg" alt="Galeri AMI 19" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(4).jpg" alt="Galeri AMI 20" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(5).jpg" alt="Galeri AMI 21" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(6).jpg" alt="Galeri AMI 22" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(7).jpg" alt="Galeri AMI 23" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(8).jpg" alt="Galeri AMI 24" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(9).jpg" alt="Galeri AMI 25" loading="lazy"></div>
+        <div class="gallery-item"><img src="Picture/Gallery/Photo from Alexander(10).jpg" alt="Galeri AMI 26" loading="lazy"></div>
       </div>
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+  </div>
+
   <footer class="site-footer">
-    <div class="footer-main" style="background-image:url('images/ami/home3.jpeg')"><div class="footer-overlay"></div>
+    <div class="footer-main" style="background-image:url('Picture/Background/image (3).jpg')">
+      <div class="footer-overlay"></div>
       <div class="container footer-grid">
-        <div class="footer-brand"><img src="images/ami/logonavbar.png" alt="AMI" height="50"><p>Manufacturer kawat bronjong/gabion terpercaya di Indonesia.</p></div>
-        <div class="footer-col"><h4>Kontak</h4><ul><li>📞 +62 878-6671-9772</li><li>📧 amibronjong02@gmail.com</li></ul></div>
-        <div class="footer-col"><h4>Sertifikasi</h4><div class="cert-row"><img src="images/ami/logokemenperin.png" alt="Kemenperin" height="40"><img src="images/ami/logokan.png" alt="KAN" height="40"><img src="images/ami/logosni1.png" alt="SNI" height="40"></div></div>
+        <div class="footer-brand">
+          <img src="Picture/Logo/logonavbar.png" alt="AMI" height="50">
+          <p>Manufacturer kawat bronjong/gabion terpercaya di Indonesia.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>📞 +62 878-6671-9772</li>
+            <li>📧 amibronjong02@gmail.com</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sertifikasi</h4>
+          <div class="cert-row">
+            <img src="Picture/Logo/Logo_of_the_Ministry_of_Industries_of_the_Republic_of_Indonesia.svg.png" alt="Kemenperin" height="40">
+            <img src="Picture/Logo/Logo_KAN.png" alt="KAN" height="40">
+            <img src="Picture/Logo/SNI_mark.svg.png" alt="SNI" height="40">
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom"><div class="container"><p>&copy; 2024 PT. Anugerah Metal Indonesia. All Rights Reserved.</p></div></div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 PT. Anugerah Metal Indonesia. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
-  <script>document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('navList').classList.toggle('open');this.classList.toggle('active');});</script>
+
+  <div class="float-buttons">
+    <a href="http://wa.me/6282139292472" class="float-btn">💬 WhatsApp</a>
+  </div>
+
+  <script>
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navList').classList.toggle('open');
+      this.classList.toggle('active');
+    });
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('siteHeader');
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    });
+
+    // Lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    let currentIndex = 0;
+    const srcs = Array.from(galleryItems).map(img => img.src);
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = srcs[currentIndex];
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    galleryItems.forEach((img, i) => {
+      img.parentElement.addEventListener('click', () => openLightbox(i));
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    document.getElementById('lightboxPrev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + srcs.length) % srcs.length;
+      lightboxImg.src = srcs[currentIndex];
+    });
+
+    document.getElementById('lightboxNext').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % srcs.length;
+      lightboxImg.src = srcs[currentIndex];
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+      if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + srcs.length) % srcs.length; lightboxImg.src = srcs[currentIndex]; }
+      if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % srcs.length; lightboxImg.src = srcs[currentIndex]; }
+    });
+  </script>
 </body>
 </html>
